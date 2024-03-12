@@ -39,16 +39,10 @@ const pcNumberDOMElement = document.getElementById('pc-number');
 
 const resultDOMElement = document.getElementById('result')
 
+const palyButtonDOMElement = document.getElementById('game-button')
 
 
-let userChoice
-if (userChoiceEvenDOMElement === true){
-    userChoice = 'pari';
-    console.log('il giocatore ha scelto pari');
-}else{
-    userChoice = 'dispari';
-    console.log('il giocatore ha scelto dispari');
-}
+
 
 
 
@@ -57,47 +51,64 @@ if (userChoiceEvenDOMElement === true){
 
 //let userNumber = parseInt(prompt('inserisci un numero da 1 a 5')); // Number
 
-// valori minimi e massimi del numero richiesto all'utente
-let minNumber = 1;
-let maxNumber = 5;
+
 
 // predichiarazione di una variabile da utilizzare dopo
-let userNumber
-// ciclo while che richiede un numero all'utente fino a quando non iserisce il numero corretto (compreso tra 1 e 5)
-while(isNaN(userNumber) || userNumber < minNumber || userNumber > maxNumber) {
-    userNumber = parseInt(prompt("inserisci un numero da 1 a 5")); //Number
-}
-console.log('numero del giocatore: ' + userNumber)
-userNumberDOMElement.innerHTML += userNumber
+
+palyButtonDOMElement.addEventListener('click', function(){
+
+    let userChoice
+    if (userChoiceEvenDOMElement === true){
+        userChoice = 'pari';
+        console.log('il giocatore ha scelto pari');
+    }else{
+        userChoice = 'dispari';
+        console.log('il giocatore ha scelto dispari');
+    }
+
+    // valori minimi e massimi del numero richiesto all'utente
+    let minNumber = 1;
+    let maxNumber = 5;
+    let userNumber
+    // ciclo while che richiede un numero all'utente fino a quando non iserisce il numero corretto (compreso tra 1 e 5)
+
+    while(isNaN(userNumber) || userNumber < minNumber || userNumber > maxNumber) {
+        userNumber = parseInt(prompt("inserisci un numero da 1 a 5")); //Number
+    }
+    console.log('numero del giocatore: ' + userNumber)
+    userNumberDOMElement.innerHTML = 'Tu: ' + userNumber;
+
+    let computerNumber = Math.floor(Math.random() * 5) +1;
+    console.log('numero del computer: ' + computerNumber)
+
+    pcNumberDOMElement.innerHTML = 'PC: ' + computerNumber;
 
 
 
 
-let computerNumber = Math.floor(Math.random() * 5) +1;
-console.log('numero del computer: ' + computerNumber)
-
-pcNumberDOMElement.innerHTML += computerNumber;
+    gameSum = userNumber + computerNumber;
+    console.log(gameSum)
 
 
+    const gameSumCheck = isEven(gameSum)
 
 
-gameSum = userNumber + computerNumber;
-console.log(gameSum)
+    if(userChoice === 'pari' && gameSumCheck === true){
+        console.log('Hai Vinto!')
+        resultDOMElement.innerHTML = 'Risultato: ' + gameSum + ' hai Vinto!';
+    }else if (userChoice === 'dispari' && gameSumCheck === false){
+        console.log('Hai Vinto!')
+        resultDOMElement.innerHTML = 'Risultato: ' + gameSum + ' hai Vinto!';
+    } else{
+        console.log('Hai Perso!')
+        resultDOMElement.innerHTML = 'Risultato: ' + gameSum + ' hai Perso!';
+    }
+
+})
 
 
-const gameSumCheck = isEven(gameSum)
 
 
-if(userChoice === 'pari' && gameSumCheck === true){
-    console.log('Hai Vinto!')
-    resultDOMElement.innerHTML += gameSum + ' hai Vinto!';
-}else if (userChoice === 'dispari' && gameSumCheck === false){
-    console.log('Hai Vinto!')
-    resultDOMElement.innerHTML += gameSum + ' hai Vinto!';
-} else{
-    console.log('Hai Perso!')
-    resultDOMElement.innerHTML += gameSum + ' hai Perso!';
-}
 
 
 
@@ -113,14 +124,14 @@ function isPalindrome(word){
     /// dichiaro una variabile che rappresenti l'ultimo index della mia parola
     let wordLastIndex = word.length - 1;
     /// creo un ciclo for che vada a controllare le lettere della mia parola fino a metà della parola stessa
-    for(wordLetters = 0; wordLetters < word.length / 2; wordLetters++){
+    for(let wordLetters = 0; wordLetters < word.length / 2; wordLetters++){
         /// creo una condizione: SE la lettera corrente (partendo da 0 è la prima), risulta diversa dall'ultima lettera della parola
-        if(word[wordLetters] !== word[wordLastIndex]){
+        if(word[wordLetters] !== word[wordLastIndex - wordLetters]){
             /// la funzione mi ritorna falso
             return false;
         }
         /// in caso le lettere sono uguali e non entro nell'if, riduco l'index dell'ultima lettera e ripeto il ciclo for
-        wordLastIndex--;
+        /// wordLastIndex--;
     }
     /// se finisco il ciclo for, senza mai essere entrato nell'if, la funzione ritorna come risultato true
     return true;
