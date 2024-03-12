@@ -75,6 +75,13 @@ palyButtonDOMElement.addEventListener('click', function(){
     const gameSumCheck = isEven(gameSum)
 
 
+
+    let gameResult = youWin(userChoice, gameSumCheck, gameSum)
+
+
+
+
+    /*
     if(userChoice === 'pari' && gameSumCheck === true){
         console.log('Hai Vinto!')
         resultDOMElement.innerHTML = 'Risultato: ' + gameSum + ' hai Vinto!';
@@ -85,7 +92,7 @@ palyButtonDOMElement.addEventListener('click', function(){
         console.log('Hai Perso!')
         resultDOMElement.innerHTML = 'Risultato: ' + gameSum + ' hai Perso!';
     }
-
+    */
     
 })
 
@@ -138,4 +145,19 @@ function isEven(number){
         return false;
     }
 
+}
+
+
+
+function youWin(choice, check, sum){
+
+    if(choice === 'pari' && check === true || choice === 'dispari' && check === false){
+        console.log('Hai Vinto!')
+        resultDOMElement.innerHTML = 'Risultato: ' + sum + ' hai Vinto!'
+        return true;
+    }else{
+        console.log('Hai Perso!')
+        resultDOMElement.innerHTML = 'Risultato: ' + sum + ' hai Perso!';
+        return false;       
+    }
 }
