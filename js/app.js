@@ -3,8 +3,40 @@ console.log('JS Trieal')
 
 
 /// costante che permette di creare un promt in cui viene richiesta una parola
-const userWord = prompt('Inserisci una parola!')
+// const userWord = prompt('Inserisci una parola!')
+const userWord = 'anna'
 
+
+
+/// costante per verificare se la parola inserita dall'utente nel prompt, è palindroma
+const wordCheck = isPalindrome(userWord);
+
+/// SE il risultato di wordCheck corrisponde a true 
+if(wordCheck === true){
+    /// viene stampato che la parola inserita dall'utente è palindroma
+    console.log(userWord + ' è palindroma');
+ // ALTRIMENTI viene stampato che la parola inserita non è palindroma   
+}else{
+    console.log(userWord + ' non è palindroma');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ↓ ↓ ↓ ↓ ↓ My Functions ↓ ↓ ↓ ↓ ↓ \\
 
 
 
@@ -25,20 +57,3 @@ function isPalindrome(word){
     /// se finisco il ciclo for, senza mai essere entrato nell'if, la funzione ritorna come risultato true
     return true;
 }
-
-
-/// costante per verificare se la parola inserita dall'utente nel prompt, è palindroma
-const wordCheck = isPalindrome(userWord);
-
-/// SE il risultato di wordCheck corrisponde a true 
-if(wordCheck === true){
-    /// viene stampato che la parola inserita dall'utente è palindroma
-    console.log(userWord + ' è palindroma');
- // ALTRIMENTI viene stampato che la parola inserita non è palindroma   
-}else{
-    console.log(userWord + ' non è palindroma');
-}
-
-
-
-
