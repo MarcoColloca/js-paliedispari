@@ -21,15 +21,38 @@ if(wordCheck === true){
 }
 
 
+/// creare un prompt dove viene richiesto pari o dispari
+/// creare un secondo prompt dove viene richiesto di inserire un numero da 1 a 5
+/// generiamo un numero casuale con una funzione (userò mathrandom.)
+/// sommo i due numeri
 
 
+let userChoice = prompt('Scegli pari o dispari.'); // String
+ 
+console.log (userChoice)
+
+let userNumber = parseInt(prompt('inserisci un numero da 1 a 5')); // Number
+
+console.log(userNumber)
 
 
+let computerNumber = Math.floor(Math.random() * 5) +1;
+console.log(computerNumber)
 
 
+gameSum = userNumber + computerNumber;
+console.log(gameSum)
+
+const gameSumCheck = isEven(gameSum)
 
 
-
+if(userChoice === 'pari' && gameSumCheck === true){
+    console.log('Hai Vinto!')
+}else if (userChoice === 'dispari' && gameSumCheck === false){
+    console.log('Hai Vinto!')
+} else{
+    console.log('Hai Perso!')
+}
 
 
 
@@ -56,4 +79,24 @@ function isPalindrome(word){
     }
     /// se finisco il ciclo for, senza mai essere entrato nell'if, la funzione ritorna come risultato true
     return true;
+}
+
+
+
+
+/// dichiaro una funzione per stabilire se un numero dato è pari
+function isEven(number){
+    /// dichiaro una variabile che corrisponda al modulo 2 del numero (il resto ottenuto dividendo il numero per 2 sarà 0)
+    let rest = number % 2;
+
+    // SE il resto sarà quindi 0
+    if(rest === 0){
+        // ritornerà true
+        return true;
+    // ALTRIMENTI se il resto sarà diverso da 0        
+    }else{
+        // ritornerà false
+        return false;
+    }
+
 }
