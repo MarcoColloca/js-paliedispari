@@ -29,14 +29,15 @@ if(wordCheck === true){
 console.log('____________________________________________')
 // let userChoice = prompt('Scegli pari o dispari.'); // String
 
-const userChoiceEvenDOMElement = document.getElementById('even').checked
+const userChoiceEvenDOMElement = document.getElementById('even').checked;
 
-const userChoiceOddDOMElement = document.getElementById('odd').checked
+const userChoiceOddDOMElement = document.getElementById('odd').checked;
 
-/*
-console.log(userChoiceEvenDOMElement)
-console.log(userChoiceOddDOMElement)
-*/
+const userNumberDOMElement = document.getElementById('user-number');
+
+const pcNumberDOMElement = document.getElementById('pc-number');
+
+const resultDOMElement = document.getElementById('result')
 
 
 
@@ -67,24 +68,35 @@ while(isNaN(userNumber) || userNumber < minNumber || userNumber > maxNumber) {
     userNumber = parseInt(prompt("inserisci un numero da 1 a 5")); //Number
 }
 console.log('numero del giocatore: ' + userNumber)
+userNumberDOMElement.innerHTML += userNumber
+
+
 
 
 let computerNumber = Math.floor(Math.random() * 5) +1;
 console.log('numero del computer: ' + computerNumber)
 
+pcNumberDOMElement.innerHTML += computerNumber;
+
+
+
 
 gameSum = userNumber + computerNumber;
 console.log(gameSum)
+
 
 const gameSumCheck = isEven(gameSum)
 
 
 if(userChoice === 'pari' && gameSumCheck === true){
     console.log('Hai Vinto!')
+    resultDOMElement.innerHTML += gameSum + ' hai Vinto!';
 }else if (userChoice === 'dispari' && gameSumCheck === false){
     console.log('Hai Vinto!')
+    resultDOMElement.innerHTML += gameSum + ' hai Vinto!';
 } else{
     console.log('Hai Perso!')
+    resultDOMElement.innerHTML += gameSum + ' hai Perso!';
 }
 
 
