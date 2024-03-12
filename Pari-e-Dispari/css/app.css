@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(54, 54, 54);
+}
+
+
+.d-none{
+    display: none;
+}
+
+.container-flex{
+    display: flex;
+    justify-content: center;
+}
+
+.consegna{
+    color: white;
+    font-size: 19px;
+}
+
+.title{
+    color: rgb(237, 243, 183)
+}
+
+
+
+.mt-5{
+    margin-top: 5rem;
+}
+
+#odd{
+    margin-left: 40px;
+}

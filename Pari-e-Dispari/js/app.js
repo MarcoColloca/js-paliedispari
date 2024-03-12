@@ -1,24 +1,6 @@
+/////////// Java Script Pari e Dispari  \\\\\\\\\\\\\
+
 console.log('JS Trieal')
-
-
-
-/// costante che permette di creare un promt in cui viene richiesta una parola
-// const userWord = prompt('Inserisci una parola!')
-const userWord = 'anna'
-
-
-
-/// costante per verificare se la parola inserita dall'utente nel prompt, è palindroma
-const wordCheck = isPalindrome(userWord);
-
-/// SE il risultato di wordCheck corrisponde a true 
-if(wordCheck === true){
-    /// viene stampato che la parola inserita dall'utente è palindroma
-    console.log(userWord + ' è palindroma');
- // ALTRIMENTI viene stampato che la parola inserita non è palindroma   
-}else{
-    console.log(userWord + ' non è palindroma');
-}
 
 
 /// creare un prompt dove viene richiesto pari o dispari
@@ -26,7 +8,7 @@ if(wordCheck === true){
 /// generiamo un numero casuale con una funzione (userò mathrandom.)
 /// sommo i due numeri
 
-console.log('____________________________________________')
+
 // let userChoice = prompt('Scegli pari o dispari.'); // String
 
 const userChoiceEvenDOMElement = document.getElementById('even').checked;
@@ -104,6 +86,7 @@ palyButtonDOMElement.addEventListener('click', function(){
         resultDOMElement.innerHTML = 'Risultato: ' + gameSum + ' hai Perso!';
     }
 
+    
 })
 
 
