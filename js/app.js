@@ -33,8 +33,10 @@ const userChoiceEvenDOMElement = document.getElementById('even').checked
 
 const userChoiceOddDOMElement = document.getElementById('odd').checked
 
+/*
 console.log(userChoiceEvenDOMElement)
 console.log(userChoiceOddDOMElement)
+*/
 
 let userChoice
 if (userChoiceEvenDOMElement === true){
@@ -43,18 +45,28 @@ if (userChoiceEvenDOMElement === true){
     userChoice = 'dispari';
 }
 
-console.log(userChoice)
+console.log(userChoiceEvenDOMElement.value)
 
 
 
 
-// let userNumber = parseInt(prompt('inserisci un numero da 1 a 5')); // Number
-let userNumber = 2
-console.log(userNumber)
+//let userNumber = parseInt(prompt('inserisci un numero da 1 a 5')); // Number
+
+// valori minimi e massimi del numero richiesto all'utente
+let minNumber = 1;
+let maxNumber = 5;
+
+// predichiarazione di una variabile da utilizzare dopo
+let userNumber
+// ciclo while che richiede un numero all'utente fino a quando non iserisce il numero corretto (compreso tra 1 e 5)
+while(isNaN(userNumber) || userNumber < minNumber || userNumber > maxNumber) {
+    userNumber = parseInt(prompt("inserisci un numero da 1 a 5")); //Number
+}
+console.log('numero del giocatore: ' + userNumber)
 
 
 let computerNumber = Math.floor(Math.random() * 5) +1;
-console.log(computerNumber)
+console.log('numero del computer: ' + computerNumber)
 
 
 gameSum = userNumber + computerNumber;
