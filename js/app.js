@@ -38,14 +38,18 @@ console.log(userChoiceEvenDOMElement)
 console.log(userChoiceOddDOMElement)
 */
 
+
+
 let userChoice
 if (userChoiceEvenDOMElement === true){
     userChoice = 'pari';
+    console.log('il giocatore ha scelto pari');
 }else{
     userChoice = 'dispari';
+    console.log('il giocatore ha scelto dispari');
 }
 
-console.log(userChoiceEvenDOMElement.value)
+
 
 
 
