@@ -35,10 +35,11 @@ const palyButtonDOMElement = document.getElementById('game-button')
 
 
 
-// predichiarazione di una variabile da utilizzare dopo
+
 
 palyButtonDOMElement.addEventListener('click', function(){
-
+    
+    // predichiarazione di una variabile da utilizzare dopo
     let userChoice
     if (userChoiceEvenDOMElement === true){
         userChoice = 'pari';
