@@ -26,11 +26,25 @@ if(wordCheck === true){
 /// generiamo un numero casuale con una funzione (userò mathrandom.)
 /// sommo i due numeri
 
-
+console.log('____________________________________________')
 // let userChoice = prompt('Scegli pari o dispari.'); // String
-let userChoice = 'pari'
 
-console.log (userChoice)
+const userChoiceEvenDOMElement = document.getElementById('even').checked
+
+const userChoiceOddDOMElement = document.getElementById('odd').checked
+
+console.log(userChoiceEvenDOMElement)
+console.log(userChoiceOddDOMElement)
+
+let userChoice
+if (userChoiceEvenDOMElement === true){
+    userChoice = 'pari';
+}else{
+    userChoice = 'dispari';
+}
+
+console.log(userChoice)
+
 
 
 
