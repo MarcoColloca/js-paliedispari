@@ -27,12 +27,15 @@ if(wordCheck === true){
 /// sommo i due numeri
 
 
-let userChoice = prompt('Scegli pari o dispari.'); // String
- 
+// let userChoice = prompt('Scegli pari o dispari.'); // String
+let userChoice = 'pari'
+
 console.log (userChoice)
 
-let userNumber = parseInt(prompt('inserisci un numero da 1 a 5')); // Number
 
+
+// let userNumber = parseInt(prompt('inserisci un numero da 1 a 5')); // Number
+let userNumber = 2
 console.log(userNumber)
 
 

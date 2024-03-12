@@ -26,3 +26,7 @@ body{
 .mt-5{
     margin-top: 5rem;
 }
+
+#odd{
+    margin-left: 40px;
+}
