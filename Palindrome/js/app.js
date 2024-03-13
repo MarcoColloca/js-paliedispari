@@ -3,7 +3,7 @@
 
 console.log('JS Trieal')
 
-
+const resultDOMElement = document.getElementById('result')
 
 /// costante che permette di creare un promt in cui viene richiesta una parola
 const userWord = prompt('Inserisci una parola!')
@@ -18,9 +18,11 @@ const wordCheck = isPalindrome(userWord);
 if(wordCheck === true){
     /// viene stampato che la parola inserita dall'utente è palindroma
     console.log(userWord + ' è palindroma');
+    resultDOMElement.innerHTML += (userWord + ' è palindroma')
  // ALTRIMENTI viene stampato che la parola inserita non è palindroma   
 }else{
     console.log(userWord + ' non è palindroma');
+    resultDOMElement.innerHTML += (userWord + ' non è palindroma')
 }
 
 
