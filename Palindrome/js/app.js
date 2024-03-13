@@ -49,6 +49,7 @@ function isPalindrome(word){
     /// creo un ciclo for che vada a controllare le lettere della mia parola fino a metà della parola stessa
     for(let wordLetters = 0; wordLetters < word.length / 2; wordLetters++){
         /// creo una condizione: SE la lettera corrente (partendo da 0 è la prima), risulta diversa dall'ultima lettera della parola
+        /// • dopo il cambiamento : SE  la lettera corrente, risulta diversa dall'ultima lettera - l'index della lettera corrente (esempio: parola con 6 lettere, quindi index da 0 a 5: inzialmente sarà l'ultima 5 - 0 = 5; successivamente la penultima 5 - 1 = 4, etc.)
         if(word[wordLetters] !== word[wordLastIndex - wordLetters]){
             /// la funzione mi ritorna falso
             return false;
