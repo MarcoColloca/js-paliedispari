@@ -11,9 +11,6 @@ console.log('JS Trieal')
 
 // let userChoice = prompt('Scegli pari o dispari.'); // String
 
-const userChoiceEvenDOMElement = document.getElementById('even').checked;
-
-const userChoiceOddDOMElement = document.getElementById('odd').checked;
 
 const userNumberDOMElement = document.getElementById('user-number');
 
@@ -30,7 +27,6 @@ const palyButtonDOMElement = document.getElementById('game-button')
 
 
 
-
 //let userNumber = parseInt(prompt('inserisci un numero da 1 a 5')); // Number
 
 
@@ -39,16 +35,21 @@ const palyButtonDOMElement = document.getElementById('game-button')
 
 palyButtonDOMElement.addEventListener('click', function(){
     
+    const userChoiceEvenDOMElement = document.getElementById('even').checked;
+
+    const userChoiceOddDOMElement = document.getElementById('odd').checked;
+
     // predichiarazione di una variabile da utilizzare dopo
     let userChoice
     if (userChoiceEvenDOMElement === true){
         userChoice = 'pari';
         console.log('il giocatore ha scelto pari');
-    }else{
+    }else if (userChoiceOddDOMElement === true){
         userChoice = 'dispari';
         console.log('il giocatore ha scelto dispari');
     }
 
+    
     // valori minimi e massimi del numero richiesto all'utente
     let minNumber = 1;
     let maxNumber = 5;
