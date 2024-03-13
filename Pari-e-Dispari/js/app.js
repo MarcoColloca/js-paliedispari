@@ -62,8 +62,8 @@ palyButtonDOMElement.addEventListener('click', function(){
     console.log('numero del giocatore: ' + userNumber)
     userNumberDOMElement.innerHTML = 'Tu: ' + userNumber;
 
-    // generazione di un numero casuale da 1 a 5
-    let computerNumber = Math.floor(Math.random() * maxNumber) + minNumber;
+    // generazione di un numero casuale da 1 a 5 tramtie una funzione
+    let computerNumber = randomNumberFromTo(1, 5)
     console.log('numero del computer: ' + computerNumber)
 
     pcNumberDOMElement.innerHTML = 'PC: ' + computerNumber;
@@ -163,4 +163,12 @@ function youWin(choice, check, sum){
         resultDOMElement.innerHTML = 'Risultato: ' + sum + ' hai Perso!';
         return false;       
     }
+}
+
+
+
+
+
+function randomNumberFromTo(min,max) {
+    return Math.floor(Math.random() * max) + min;    
 }
