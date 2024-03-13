@@ -156,11 +156,11 @@ function youWin(choice, check, sum){
 
     if(choice === 'pari' && check === true || choice === 'dispari' && check === false){
         console.log('Hai Vinto!')
-        resultDOMElement.innerHTML = 'Risultato: ' + sum + ' hai Vinto!'
+        resultDOMElement.innerHTML = 'Risultato: ' + sum + ' - hai Vinto!'
         return true;
     }else{
         console.log('Hai Perso!')
-        resultDOMElement.innerHTML = 'Risultato: ' + sum + ' hai Perso!';
+        resultDOMElement.innerHTML = 'Risultato: ' + sum + ' - hai Perso!';
         return false;       
     }
 }
@@ -170,5 +170,6 @@ function youWin(choice, check, sum){
 
 
 function randomNumberFromTo(min,max) {
-    return Math.floor(Math.random() * max) + min;    
+    // scritta in questo modo, consente di calcolare effettivamente un numero il cui massimo possibile sia quello inserito nel parametro max (senza quella piccola espressione, il max risulterebbe pari al numero segnato più il numero minimo)
+    return Math.floor((Math.random()) * (max - min + 1)) + min;
 }
