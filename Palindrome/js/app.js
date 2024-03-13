@@ -44,6 +44,9 @@ if(wordCheck === true){
 
 /// dichiaro una funzione (isPalindrome) a cui assegno 1 parametri (word)
 function isPalindrome(word){
+    
+    /// utilizzo una funzione toLowerCase() per fare in modo che la parola controllata abbia solo lettere minuscole (questo va fatto perchè Java Script considera diverse lettere maiuscole e minuscole)
+    word = word.toLowerCase()
     /// dichiaro una variabile che rappresenti l'ultimo index della mia parola
     let wordLastIndex = word.length - 1;
     /// creo un ciclo for che vada a controllare le lettere della mia parola fino a metà della parola stessa
