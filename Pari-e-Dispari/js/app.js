@@ -63,7 +63,7 @@ palyButtonDOMElement.addEventListener('click', function(){
     userNumberDOMElement.innerHTML = 'Tu: ' + userNumber;
 
     // generazione di un numero casuale da 1 a 5
-    let computerNumber = Math.floor(Math.random() * 5) +1;
+    let computerNumber = Math.floor(Math.random() * maxNumber) + minNumber;
     console.log('numero del computer: ' + computerNumber)
 
     pcNumberDOMElement.innerHTML = 'PC: ' + computerNumber;
