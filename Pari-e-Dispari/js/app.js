@@ -54,8 +54,8 @@ palyButtonDOMElement.addEventListener('click', function(){
     let minNumber = 1;
     let maxNumber = 5;
     let userNumber
-    // ciclo while che richiede un numero all'utente fino a quando non iserisce il numero corretto (compreso tra 1 e 5)
 
+    // ciclo while che richiede un numero all'utente fino a quando non iserisce il numero corretto (compreso tra 1 e 5)
     while(isNaN(userNumber) || userNumber < minNumber || userNumber > maxNumber) {
         userNumber = parseInt(prompt("inserisci un numero da 1 a 5")); //Number
     }
@@ -69,15 +69,15 @@ palyButtonDOMElement.addEventListener('click', function(){
 
 
 
-
+    // somma tra numero dell'utente e numero del pc
     gameSum = userNumber + computerNumber;
     console.log(gameSum)
 
-
+    // controllo tramite funzione che riporta se la somma è pari o dispari (true = pari , false = dispari)
     const gameSumCheck = isEven(gameSum)
 
 
-
+    // dichiarazione del risultato tramite funzione
     let gameResult = youWin(userChoice, gameSumCheck, gameSum)
 
 
